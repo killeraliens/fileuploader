@@ -5,11 +5,16 @@ import './SearchBox.css';
 
 
 class SearchBox extends React.Component {
+
+  handleChange = (e) => {
+    this.props.onTermChange(e.target.value);
+  }
+
   render() {
     return (
       <div className="SearchBox">
        <FontAwesomeIcon icon={faSearch}/>
-       <input type="text" placeholder="Search Term"/>
+       <input type="text" placeholder="Search Term" value={this.props.searchTerm} onChange={this.handleChange}/>
       </div>
     )
   }

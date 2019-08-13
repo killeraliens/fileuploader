@@ -11,8 +11,8 @@ class SearchBar extends React.Component {
           <h1>File Uploader</h1>
         </div>
         <div className="SearchBar_controls">
-          <SearchBox />
-          <FilterOptions />
+          <SearchBox searchTerm={this.props.searchTerm} onTermChange={this.props.onTermChange}/>
+          <FilterOptions filterOption={this.props.filterOption} onFilterOptionSelect={this.props.onFilterOptionSelect}/>
         </div>
       </div>
     )
